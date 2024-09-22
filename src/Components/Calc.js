@@ -1,20 +1,29 @@
-import React from 'react';
+import React from "react";
 
-// Calculator component
-export default function Calc(props) {
-  return (
-    <div className="calculator">
-        {/* Row 1 */}
-        <CalcButton value="7" />
-        <CalcButton value="8" />
-        <CalcButton value="9" />
-        
-      </div>
-  );
+export default function Calc(){
+  return(<div className="calculator">
+    <div className="display">0</div>
+  <Buttons value="7"/>
+  <Buttons value="8"/>
+  <Buttons value="9"/>
+  <Buttons value="/"/>
+
+  <Buttons value="4"/>
+  <Buttons value="5"/>
+  <Buttons value="6"/>
+  <Buttons value="*"/>
+
+  <Buttons value="1"/>
+  <Buttons value="2"/>
+  <Buttons value="3"/>
+  <Buttons value="-"/>
+
+  <Buttons value="C"/>
+  <Buttons value="0"/>
+  <Buttons value="="/>
+  <Buttons value="+"/>
+  </div>);
 }
-
-function CalcButton(props) {
-  return (
-    <button>{props.value}</button>
-  );
+function Buttons(props){
+  return <button>{props.value}</button>
 }
