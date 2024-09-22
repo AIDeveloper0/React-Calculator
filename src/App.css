@@ -1,0 +1,9 @@
+.app-container{
+  width: 400px;
+  height: 400px;
+}
+.calculator{
+  display: grid;
+  grid-template-columns: repeat(4,50px);
+
+}
