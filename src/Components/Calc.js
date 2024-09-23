@@ -6,7 +6,7 @@ export default function Calc(){
     total:"0",
     isInitial:true,
     preOp:"",
-    display: "0" // New field for display
+    display: "0" 
   });
 
   function handleNumber(value){
@@ -14,13 +14,20 @@ export default function Calc(){
     if(!calc.isInitial){
       newValue=calc.current+value;
     }
-    setCalc({current:newValue,total:calc.total,isInitial:false,preOp:calc.preOp,display: newValue // Update display
-    });
+    setCalc({current:newValue,
+      total:calc.total,
+      isInitial:false,
+      preOp:calc.preOp,
+      display: newValue});
   }
 
   function handleOperator(value){
     const total=doCalculation();
-    setCalc({current:total.toString(),total:total.toString(),isInitial:true,preOp:value,display: total + " " + value // Update display to show operator
+    setCalc({current:total.toString(),
+      total:total.toString(),
+      isInitial:true,
+      preOp:value,
+      display: total + " " + value
     });
   }
 
@@ -67,13 +74,16 @@ export default function Calc(){
 
   function handleEqual(){
     let total=doCalculation(); 
-    setCalc({current:total.toString(),total:total.toString(),isInitial:true,preOp:"",display: total.toString() // Update display to show result
+    setCalc({current:total.toString(),
+      total:total.toString(),
+      isInitial:true,preOp:"",
+      display: total.toString()
     });
 
   }
 
   function renderDisplay(){
-    return calc.display; // Show updated display
+    return calc.display; 
   }
 
   return(<div className="calculator">
