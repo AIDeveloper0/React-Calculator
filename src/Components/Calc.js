@@ -1,15 +1,32 @@
 import React from "react";
 
 export default function Calc(){
+
+const [calc,setCalc]=React.useState({
+    current:"0",
+    total:"0",
+    isInitial:true
+});
+
 function handleNumber(value){
-alert("Clicked"+value);
+  let newValue=value;
+
+  if(!calc.isInitial){
+    newValue=calc.current+value;  
+  }
+  setCalc({current:newValue,total:calc.total,isInitial:false});  
+  
 }
+
 function handleOperator(value){
-  alert("Clicked"+value);
+}
+
+function renderDisplay(){
+  return calc.current;
 }
 
   return(<div className="calculator">
-    <div className="display">0</div>
+    <div className="display">{renderDisplay()}</div>
   <Buttons value="7" onClick={handleNumber} />
   <Buttons value="8"onClick={handleNumber}/>
   <Buttons value="9"onClick={handleNumber}/>
